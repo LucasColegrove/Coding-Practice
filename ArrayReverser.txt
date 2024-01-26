@@ -1,0 +1,40 @@
+//Author: Lucas Colegrove 
+//Date: 10/23/2023
+
+import java.util.*;
+class ArrayReverser 
+{
+    public static void main(String[] args) 
+    {
+        int[] originalArray = {3, 6, 4, 7, 1, 9};
+        int happyGilmore = originalArray.length;
+        
+        System.out.println("\n" + Arrays.toString(originalArray));
+        
+        for(int i = 0; i < happyGilmore / 2; i++)
+        {
+            int temp = originalArray[i];
+            originalArray[i] = originalArray[happyGilmore - i - 1];
+            originalArray[happyGilmore - i - 1] = temp;
+            
+        }
+        
+        for (int i = 0; i < happyGilmore; i++)
+        {
+            if (i == 0)
+            {
+                System.out.print("[");
+            }
+            
+            if (i < happyGilmore - 1)
+            {
+                System.out.print(originalArray[i] + ", ");                
+            }
+            
+            if (i == happyGilmore - 1)
+            {
+                System.out.print(originalArray[i] + "]");
+            }
+        }
+    }
+}
